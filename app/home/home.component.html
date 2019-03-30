@@ -1,0 +1,30 @@
+<ActionBar title="Compose Email Message" class="action-bar">
+</ActionBar>
+
+<ScrollView>
+    <StackLayout>
+        <GridLayout rows="*, *, *, *, *" columns="80, *" class="form">
+            <Label row="0" col="0" text="To:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="0" col="1" [(ngModel)]="toEmail" hint="to email address(es)"
+                class="input input-border" keyboardType="email"></TextField>
+            <Label row="1" col="0" text="CC:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="1" col="1" [(ngModel)]="ccEmail" hint="cc email address(es)"
+                class="input input-border" keyboardType="email"></TextField>
+            <Label row="2" col="0" text="BCC:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="2" col="1" [(ngModel)]="bccEmail" hint="bcc email address(es)"
+                class="input input-border" keyboardType="email"></TextField>
+            <Label row="3" col="0" text="Subject:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="3" col="1" [(ngModel)]="subject" hint="compose email subject"
+                class="input input-border"></TextField>
+            <Label row="4" col="0" text="Message:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="4" col="1" [(ngModel)]="message" hint="compose email message"
+                class="input input-border"></TextField>
+        </GridLayout>
+        <Button text="Send Email" (tap)="onEmailSend($event)" class="btn btn-primary"></Button>
+    </StackLayout>
+</ScrollView>
